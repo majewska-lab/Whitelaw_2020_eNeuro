@@ -129,6 +129,7 @@ for i = 1:size(input_names,2)
     results_file = fullfile(flow_results_dir,flow_results_names{i}); % Define output file
         % Check if ROI selection has already occured
     results_vars = who('-file', results_file); 
+    load(results_file,'stack','stack_BW');
     if ismember('ROI_center', results_vars) == 1
        fprintf("ROI selection already done \n") 
     else
